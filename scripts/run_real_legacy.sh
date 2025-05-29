@@ -1,0 +1,40 @@
+XLA_FLAGS=--xla_gpu_cuda_data_dir=/usr/local/cuda python torf.py --config config/config_quads_split_real_torf_poses.txt \
+    --datadir data/real_scenes \
+    --basedir logs/$2 \
+    --dataset_type quads \
+    --scan $2 \
+    --expname $3  \
+    --num_views $1 \
+    --num_frames $1 \
+    --tof_image_width 320 --tof_image_height 240 \
+    --tof_scale_factor 1.0 \
+    --color_image_width 640 --color_image_height 480 \
+    --color_scale_factor 0.5 \
+    --i_img 10000 \
+    --i_save 25000 \
+    --i_video 25000 \
+    --view_step 1 --view_start 0 --total_num_views $1 \
+    --use_quads \
+    --scene_flow \
+    --scene_flow_weight 0.01 \
+    --scene_flow_weight_decay_steps 400 \
+    --scene_flow_minimal 0.001 \
+    --scene_flow_smoothness_temporal 0.001 \
+    --scene_flow_smoothness_spatial 0.0 \
+    --flow_init_std 0.00001 \
+    --cycle_consistency 0.0001 \
+    --tof_weight 10.0 \
+    --neighborhood_size 1 \
+    --warped_tof_weight 10.0 \
+    --color_weight 1.0 \
+    --warped_color_weight 0.01 \
+    --quad_weight_decay_steps 100 \
+    --partial_scene_flow \
+    --spiral_radius 1 \
+    --clip_grad 1.0 \
+    --N_rand 192 \
+    --depth_range 10.0 \
+    --falloff_range 10.0 \
+    --max_depth_fac 0.55 \
+    --use_relative_poses \
+    $4

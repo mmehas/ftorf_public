@@ -1,0 +1,42 @@
+python torf.py --config config/config_static_camera_torf_baseline_20Mhz.txt \
+    --datadir $2 \
+    --basedir $3 \
+    --dataset_type quads \
+    --scan $4 \
+    --expname $4 \
+    --num_views $1 \
+    --num_frames $1 \
+    --tof_image_width 320 --tof_image_height 240 \
+    --tof_scale_factor 1.0 \
+    --color_image_width 320 --color_image_height 240 \
+    --color_scale_factor 1.0 \
+    --i_img 10000 \
+    --i_save 25000 \
+    --i_video 50000 \
+    --view_step 1 --view_start 0 --total_num_views $1 \
+    --fix_view \
+    --use_quads \
+    --scene_flow \
+    --tof_weight 10.0 \
+    --color_weight 1.0 \
+    --partial_scene_flow \
+    --lrate 0.0002 \
+    --clip_grad 1.0 \
+    --temporal_embedding latent \
+    --static_dynamic_integration dynamic \
+    --pretraining_scheme stages \
+    --pretraining_stage1_iters 400001 \
+    --min_depth_fac $5 \
+    --max_depth_fac $6 \
+    --quad_multiplier 0.5 \
+    --lrate_decay 10000000000000 \
+    --tof_loss_norm L2 \
+    --N_rand 512 \
+    --N_iters 400001 \
+    --render_extrinsics_file_spiral blender_spiral.npy \
+    --phasor_type post_depth \
+    --tof_multiplier 1.0 \
+    --train_on_phasor \
+    --gradient_accumulation_factor 2 \
+    --resume \
+    $7

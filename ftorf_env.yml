@@ -1,0 +1,19 @@
+name: ftorf
+channels:
+  - defaults
+  - anaconda
+dependencies:
+  - python=3.8
+  - pip
+  - pillow=8.4.0
+  - cudatoolkit=11.8.0
+  - scipy=1.7.1
+  - pip:
+    - configargparse
+    - imageio
+    - imageio-ffmpeg
+    - opencv-python
+    - matplotlib
+    - tensorflow-gpu==2.5.0
+    - tensorflow_addons
+    - tqdm
