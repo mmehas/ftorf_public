@@ -13,8 +13,9 @@ Brown University, <sup>∞</sup>Meta Reality Labs, *Carnegie Mellon University
 To set up the environment, run<br>
 ```
 ./install_env.sh
-conda activate ftorf
 ```
+
+The script should install a conda environment ```ftorf``` and activate it.
 
 This setup was tested on NVIDIA 3090 RTX and CUDA 11.8, version adjustments for tensorflow version might be required for other configurations.
 
